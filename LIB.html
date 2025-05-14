@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+      background: white;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #2980b9;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Library Management System</h1>
+</header>
+
+<nav>
+  <a href="#login-dashboard">Login Dashboard</a>
+  <a href="#user-login">User Login</a>
+  <a href="#issued-books">Issued Books</a>
+  <a href="#admin-login">Admin Login</a>
+  <a href="#publication">Publication</a>
+  <a href="#issue-book">Issue Book</a>
+  <a href="#request-book">Request Book</a>
+  <a href="#register">Register</a>
+</nav>
+
+<div class="container">
+
+  <h2 id="login-dashboard">Login Dashboard</h2>
+  <p><strong>Description:</strong> Initial screen providing navigation to Admin and User login portals.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Launch application</td><td>Login dashboard is displayed</td><td>Dashboard loaded with options</td><td>Pass</td></tr>
+    <tr><td>Click on "Admin Login"</td><td>Admin login page is loaded</td><td>Redirected to admin login screen</td><td>Pass</td></tr>
+    <tr><td>Click on "User Login"</td><td>User login page is loaded</td><td>Redirected to user login screen</td><td>Pass</td></tr>
+  </table>
+
+  <h2 id="user-login">User Login</h2>
+  <p><strong>Description:</strong> Authenticate users with valid credentials and access user-specific features.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Enter valid credentials</td><td>Login successful</td><td>User redirected to dashboard</td><td>Pass</td></tr>
+    <tr><td>Enter invalid password</td><td>Login failed with error</td><td>Error: "Incorrect password"</td><td>Pass</td></tr>
+    <tr><td>Leave fields blank and submit</td><td>Prompt for required fields</td><td>Alert: "Please fill all fields"</td><td>Pass</td></tr>
+  </table>
+
+  <h2 id="issued-books">Issued Books (User Side)</h2>
+  <p><strong>Description:</strong> Displays a list of books issued to the logged-in user.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Login as user</td><td>User dashboard appears</td><td>Dashboard displayed</td><td>Pass</td></tr>
+    <tr><td>Click "Issued Books"</td><td>List of issued books shown</td><td>Issued books table displayed</td><td>Pass</td></tr>
+    <tr><td>Click book title/details</td><td>Book details shown</td><td>Book details popup appeared</td><td>Pass</td></tr>
+  </table>
+
+  <h2 id="admin-login">Admin Login</h2>
+  <p><strong>Description:</strong> Authenticate administrators to access management functionalities.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Enter valid credentials</td><td>Admin dashboard loaded</td><td>Admin redirected to dashboard</td><td>Pass</td></tr>
+    <tr><td>Enter wrong credentials</td><td>Login error shown</td><td>Message: "Invalid username/password"</td><td>Pass</td></tr>
+    <tr><td>Leave fields empty</td><td>Validation message appears</td><td>Prompt: "Username required"</td><td>Pass</td></tr>
+  </table>
+
+  <h2 id="publication">Publication (Admin Side)</h2>
+  <p><strong>Description:</strong> Manage publications by adding, viewing, and deleting records.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Login as admin</td><td>Admin panel is visible</td><td>Admin panel loaded</td><td>Pass</td></tr>
+    <tr><td>Go to "Manage Publications"</td><td>Publication list appears</td><td>Table of publications displayed</td><td>Pass</td></tr>
+    <tr><td>Add new publication</td><td>Publication added to list</td><td>New entry visible in list</td><td>Pass</td></tr>
+    <tr><td>Delete existing publication</td><td>Entry removed from list</td><td>Row deleted successfully</td><td>Pass</td></tr>
+  </table>
+
+  <h2 id="issue-book">Issue Book (Admin Portal)</h2>
+  <p><strong>Description:</strong> Admin issues books to users from the available collection.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Go to "Issue Book"</td><td>Form to issue book is displayed</td><td>Form loaded with dropdowns</td><td>Pass</td></tr>
+    <tr><td>Select user and book</td><td>Fields selected</td><td>Fields auto-filled correctly</td><td>Pass</td></tr>
+    <tr><td>Click "Issue"</td><td>Book marked as issued</td><td>Confirmation message appeared</td><td>Pass</td></tr>
+    <tr><td>Check issued books list</td><td>Book appears in user's issued list</td><td>Book listed under issued records</td><td>Pass</td></tr>
+  </table>
+
+  <h2 id="request-book">Request Book (Admin Portal)</h2>
+  <p><strong>Description:</strong> Admin views and responds to book issue requests from users.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Open "Requested Books"</td><td>List of all user requests shown</td><td>Request list loaded</td><td>Pass</td></tr>
+    <tr><td>Click "Approve"</td><td>Status updated to approved</td><td>Status changed successfully</td><td>Pass</td></tr>
+    <tr><td>Click "Reject"</td><td>Status updated to rejected</td><td>Entry marked as rejected</td><td>Pass</td></tr>
+  </table>
+
+  <h2 id="register">Register (Admin Portal)</h2>
+  <p><strong>Description:</strong> Admin registers new users into the system.</p>
+  <table>
+    <tr><th>Step Details</th><th>Expected Result</th><th>Actual Result</th><th>Pass/Fail</th></tr>
+    <tr><td>Open registration form</td><td>Form loaded</td><td>All fields visible</td><td>Pass</td></tr>
+    <tr><td>Fill and submit valid info</td><td>User registered successfully</td><td>Success alert shown</td><td>Pass</td></tr>
+    <tr><td>Submit with missing info</td><td>Validation error appears</td><td>Alert: "Fill all required fields"</td><td>Pass</td></tr>
+    <tr><td>Register duplicate user</td><td>Error: "User already exists"</td><td>Error displayed correctly</td><td>Pass</td></tr>
+  </table>
+
+</div>
+
+<footer>
+  &copy; 2025 Library Management System
+</footer>
+
+</body>
+</html>
